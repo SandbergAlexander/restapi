@@ -6,7 +6,11 @@ app = FastAPI()
 ordlista = ["hej","hejdå"]
 testa = ordlista[0]
 print (testa)
-
+#------------------------------------------------------------
+#get
+@app.get("/")
+def read_root():
+    return {""}
 #------------------------------------------------------------
 #get
 @app.get("/user")
