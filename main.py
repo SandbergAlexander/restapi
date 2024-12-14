@@ -3,32 +3,41 @@ from typing import Union
 from fastapi import FastAPI
 
 app = FastAPI()
-ordlista = ["hej","hejdå"]
-testa = ordlista[0]
-print (testa)
+items = []
 #------------------------------------------------------------
 #get
-@app.get("/")
-def read_root():
-    return {""}
+@app.get("/") 
+def create_item(): 
+    
+    return {"":items}
 #------------------------------------------------------------
 #get
-@app.get("/user")
-def read_root():
-    return {"hej"}
+@app.get("/user{item_id}")
+def create_item(item_id: str):
+    items.append(item)
+    return items
 #------------------------------------------------------------
 #post
-@app.post("/user")
-def post_root():
-    return {ordlista.append("hej")}
+@app.post("/user/{item_id}") 
+def create_item(item_id: str): 
+    items.append(item_id) 
+    return {"item_id": item_id
+    
+    }
 #------------------------------------------------------------
 #delete 
-@app.delete("/user")
-def delete_root():
-    return {"hej"}
+@app.delete("/user/{item_id}") 
+def create_item(item_id: str): 
+    items.remove(item_id) 
+    return {"item_id": item_id
+    
+    }
 #------------------------------------------------------------
 #put
-@app.put("/user")
-def put_root():
-    return {"hej"}
+@app.put("/user/{item_id}") 
+def create_item(item_id: str): 
+    items.append(item_id) 
+    return {"item_id": item_id
+    
+    }
 #------------------------------------------------------------
