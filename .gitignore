@@ -5,3 +5,4 @@
 *.png 
 
 test/__pycache__/Main_test.cpython-313.pyc
+test/__pycache__/Main_test.cpython-313-pytest-8.3.4.pyc

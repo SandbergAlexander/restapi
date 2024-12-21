@@ -15,8 +15,6 @@ def get_all_items():
 def get_item(item_id: str):  
         items.index(item_id) 
         return {"user":item_id} 
-
-     
 #------------------------------------------------------------
 #post
 @app.post("/user/{item_id}",status_code=201) 
