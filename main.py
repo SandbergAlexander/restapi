@@ -23,7 +23,6 @@ def get_item(item_id: str):
 #post
 @app.post("/user/{item_id}") 
 def create_item(item_id: str): 
-  
         items.append(item_id) 
         return { item_id} 
 #delete
@@ -41,3 +40,4 @@ def change_item(item_id: str):
     
     }
 #------------------------------------------------------------
+ 
