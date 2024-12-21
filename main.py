@@ -2,7 +2,7 @@ from typing import Union
 
 from fastapi import FastAPI, HTTPException
 app = FastAPI()
-items = ["alexander", "test-name", "sato"] 
+items = ["alexander", "Alexander", "sato","benny"] 
 
 #------------------------------------------------------------
 #get
@@ -16,7 +16,7 @@ def get_item(item_id: str):
     if not item_id: 
         raise HTTPException(status_code=400, detail="Item ID is required") 
         items(item_id) 
-        return {"user"} 
+        return {"user":item_id} 
 
     
 #------------------------------------------------------------
@@ -24,7 +24,7 @@ def get_item(item_id: str):
 @app.post("/user/{item_id}") 
 def create_item(item_id: str): 
         items.append(item_id) 
-        return { item_id} 
+        return {item_id} 
 #delete
 #------------------------------------------------------------
 @app.delete("/user/{item_id}") 
@@ -36,8 +36,6 @@ def delete_item(item_id: str):
 @app.put("/user/{item_id}") 
 def change_item(item_id: str): 
     items.append(item_id) 
-    return {"item_id": item_id
-    
-    }
+    return {"item_id": item_id}
 #------------------------------------------------------------
  
