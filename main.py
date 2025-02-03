@@ -1,5 +1,8 @@
 from typing import Union
+import os 
+import io
 
+ 
 from fastapi import FastAPI, HTTPException
 app = FastAPI()
 items = ["alexander", "Alexander", "sato","benny"] 
@@ -34,4 +37,10 @@ def change_item(item_id: str):
     items.append(item_id) 
     return {"item_id": item_id}
 #------------------------------------------------------------
- 
+@app.put("/items/{item_id}") 
+def update_item(item_id: int, updated_item: Item):
+     for item in items: 
+        if item.id == item_id:
+                item.name = updated_item.name
+        return item 
+        raise HTTPException(status_code=404, detail="Item not found")
